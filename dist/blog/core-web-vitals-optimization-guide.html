@@ -1,0 +1,304 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="The Comprehensive Guide to Core Web Vitals Optimization. Learn how to optimize LCP, CLS, and FID to boost organic search engine rankings.">
+  <meta name="keywords" content="core web vitals guide, optimize LCP, fix cumulative layout shift, google page experience ranking">
+  <meta name="robots" content="index, follow">
+  
+  <title>The Comprehensive Guide to Core Web Vitals Optimization | WebAura Blog</title>
+
+  <!-- Preconnect to external assets for speed -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+  <!-- CSS Entrypoint (Subfolder depth) -->
+
+  <!-- Canonical URL -->
+  <link rel="canonical" href="https://webaura.co/blog/core-web-vitals-optimization-guide.html">
+
+  <!-- Open Graph / Facebook -->
+  <meta property="og:type" content="article">
+  <meta property="og:url" content="https://webaura.co/blog/core-web-vitals-optimization-guide.html">
+  <meta property="og:title" content="The Comprehensive Guide to Core Web Vitals Optimization | WebAura Blog">
+  <meta property="og:description"
+    content="Understand the technical metrics behind Google's Page Experience update. Learn how to size media containers, compress assets, and defer scripting elements.">
+  <meta property="og:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+
+  <!-- Twitter -->
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:url" content="https://webaura.co/blog/core-web-vitals-optimization-guide.html">
+  <meta name="twitter:title" content="The Comprehensive Guide to Core Web Vitals Optimization | WebAura Blog">
+  <meta name="twitter:description"
+    content="Understand the technical metrics behind Google's Page Experience update. Learn how to size media containers, compress assets, and defer scripting elements.">
+  <meta name="twitter:image" content="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80">
+
+  <!-- Favicon and Device Icons -->
+  <link rel="icon" type="image/png" sizes="32x32" href="/assets/logo-D-U1V_IV.png">
+  <link rel="apple-touch-icon" href="/assets/logo-D-U1V_IV.png">
+  <meta name="theme-color" content="#08142F">
+
+  <!-- Structured Data JSON-LD Graph -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "Organization",
+        "@id": "https://webaura.co/#organization",
+        "name": "WebAura",
+        "url": "https://webaura.co",
+        "logo": {
+          "@type": "ImageObject",
+          "@id": "https://webaura.co/#logo",
+          "url": "https://webaura.co/assets/logo/logo.png"
+        }
+      },
+      {
+        "@type": "WebSite",
+        "@id": "https://webaura.co/#website",
+        "url": "https://webaura.co",
+        "name": "WebAura"
+      },
+      {
+        "@type": "BlogPosting",
+        "@id": "https://webaura.co/blog/core-web-vitals-optimization-guide.html#post",
+        "isPartOf": {
+          "@id": "https://webaura.co/blog/core-web-vitals-optimization-guide.html#webpage"
+        },
+        "headline": "The Comprehensive Guide to Core Web Vitals Optimization",
+        "description": "An in-depth developer guide on identifying and repairing Core Web Vitals speed blockages.",
+        "image": "https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80",
+        "datePublished": "2026-07-04T00:00:00Z",
+        "dateModified": "2026-07-04T00:00:00Z",
+        "author": {
+          "@type": "Person",
+          "name": "Shihad Y",
+          "jobTitle": "Lead Architect at WebAura"
+        },
+        "publisher": {
+          "@id": "https://webaura.co/#organization"
+        }
+      },
+      {
+        "@type": "WebPage",
+        "@id": "https://webaura.co/blog/core-web-vitals-optimization-guide.html#webpage",
+        "url": "https://webaura.co/blog/core-web-vitals-optimization-guide.html",
+        "name": "The Comprehensive Guide to Core Web Vitals Optimization | WebAura Blog",
+        "isPartOf": {
+          "@id": "https://webaura.co/#website"
+        },
+        "breadcrumb": {
+          "@id": "https://webaura.co/blog/core-web-vitals-optimization-guide.html#breadcrumb"
+        }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://webaura.co/blog/core-web-vitals-optimization-guide.html#breadcrumb",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "name": "Home",
+            "item": "https://webaura.co/index.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "name": "Blog",
+            "item": "https://webaura.co/blog.html"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "name": "Core Web Vitals Guide",
+            "item": "https://webaura.co/blog/core-web-vitals-optimization-guide.html"
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+  <script type="module" crossorigin src="/assets/main-DkeA6mFO.js"></script>
+  <link rel="stylesheet" crossorigin href="/assets/main-DbE2DUoP.css">
+</head>
+
+<body>
+  <!-- ==========================================
+       HEADER / NAVIGATION
+       ========================================== -->
+  <header class="header" id="header">
+    <div class="container">
+      <a href="../index.html" class="logo-wrapper" aria-label="WebAura Home">
+        <img src="/assets/logo-D-U1V_IV.png" alt="WebAura Logo" class="logo-img" width="160" height="38">
+      </a>
+
+      <nav aria-label="Main Navigation">
+        <ul class="nav-links-list" id="nav-links">
+          <li><a href="../index.html" class="nav-link">Home</a></li>
+          <li><a href="../about.html" class="nav-link">About</a></li>
+          <li><a href="../services.html" class="nav-link">Services</a></li>
+          <li><a href="../projects.html" class="nav-link">Projects</a></li>
+          <li><a href="../process.html" class="nav-link">Process</a></li>
+          <li><a href="../faq.html" class="nav-link">FAQ</a></li>
+          <li><a href="../blog.html" class="nav-link active">Blog</a></li>
+          <li><a href="../contact.html" class="nav-link">Contact</a></li>
+        </ul>
+      </nav>
+
+      <div class="nav-cta">
+        <a href="../contact.html" class="btn btn-secondary magnetic ripple-btn" id="nav-quote-btn">
+          <span class="magnetic-inner">Get a Quote</span>
+        </a>
+      </div>
+
+      <button class="nav-toggle" id="nav-toggle" aria-label="Toggle Menu" aria-controls="nav-links"
+        aria-expanded="false">
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+    <!-- ==========================================
+         BREADCRUMB SEPARATOR (A11Y)
+         ========================================== -->
+    <nav class="breadcrumb-nav container" aria-label="Breadcrumb" style="padding-top: 110px; margin-bottom: -40px;">
+      <ol style="display: flex; gap: 8px; list-style: none; font-size: 13px; color: #64748B;">
+        <li><a href="../index.html" style="color: var(--blue-indigo); text-decoration: none;">Home</a></li>
+        <li style="color: #94A3B8;">/</li>
+        <li><a href="../blog.html" style="color: var(--blue-indigo); text-decoration: none;">Blog</a></li>
+        <li style="color: #94A3B8;">/</li>
+        <li aria-current="page" style="color: var(--navy); font-weight: 500;">Core Web Vitals Guide</li>
+      </ol>
+    </nav>
+
+    <!-- ==========================================
+         ARTICLE CONTENT
+         ========================================== -->
+    <article style="padding: 140px 0 100px;">
+      <div class="container" style="max-width: 850px;">
+        <header style="margin-bottom: 40px;">
+          <span style="font-size: 12px; color: var(--blue-indigo); font-weight: 700; text-transform: uppercase; letter-spacing: 1px; display: block; margin-bottom: 8px;">Engineering Excellence</span>
+          <h1 style="font-size: clamp(28px, 4.5vw, 44px); color: var(--navy); font-weight: 800; line-height: 1.2; margin-bottom: 16px; font-family: var(--font-heading);">
+            The Comprehensive Guide to Core Web Vitals Optimization
+          </h1>
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <div style="width: 40px; height: 40px; border-radius: 50%; background: var(--blue-tint); display: flex; align-items: center; justify-content: center; font-weight: 700; color: var(--blue-indigo);">SY</div>
+            <div>
+              <span style="font-size: 14px; font-weight: 600; color: var(--navy); display: block;">Shihad Y</span>
+              <span style="font-size: 12px; color: #94A3B8;">Lead Web Architect • July 4, 2026</span>
+            </div>
+          </div>
+        </header>
+
+        <div style="border-radius: 20px; overflow: hidden; margin-bottom: 40px;">
+          <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?auto=format&fit=crop&w=800&q=80" alt="Code speed test dashboard" style="width: 100%; display: block;" width="800" height="500">
+        </div>
+
+        <div class="article-body" style="color: #475569; font-size: 16px; line-height: 1.8; display: flex; flex-direction: column; gap: 24px;">
+          <p>
+            In today's search landscape, speed is no longer just a technical recommendation—it is a core ranking factor. Google's Page Experience update uses three key metrics, known as Core Web Vitals, to evaluate page speed. Optimizing these metrics is essential to securing top rankings in search results.
+          </p>
+
+          <h2 style="font-size: 26px; color: var(--navy); font-weight: 800; margin-top: 20px; font-family: var(--font-heading);">1. Largest Contentful Paint (LCP)</h2>
+          <p>
+            LCP measures perceived load speed. It marks the point in the page load timeline when the primary content (typically a hero image or main heading block) has likely loaded. An LCP under 2.5 seconds is considered good.
+          </p>
+          <h3 style="font-size: 20px; color: var(--navy); font-weight: 700; margin-top: 10px; font-family: var(--font-heading);">How to Optimize LCP:</h3>
+          <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Preload Critical Assets:</strong> Use `rel="preload"` tags to prompt browsers to download the main hero image or stylesheet immediately.</li>
+            <li><strong>Compress Images:</strong> Use modern file formats like WebP or AVIF, and resize images appropriately for mobile screens.</li>
+            <li><strong>Minimize Blocking CSS:</strong> Inline essential styles and defer non-critical layout sheets.</li>
+          </ul>
+
+          <h2 style="font-size: 26px; color: var(--navy); font-weight: 800; margin-top: 20px; font-family: var(--font-heading);">2. Cumulative Layout Shift (CLS)</h2>
+          <p>
+            CLS measures visual stability. It quantifies how much elements on a page move around while loading, which can lead to users accidentally clicking the wrong buttons on mobile screens. A good CLS score is under 0.1.
+          </p>
+          <h3 style="font-size: 20px; color: var(--navy); font-weight: 700; margin-top: 10px; font-family: var(--font-heading);">How to Optimize CLS:</h3>
+          <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Set Dimensions:</strong> Always specify width and height values on images and video wrappers so browsers can reserve space for them during layout rendering.</li>
+            <li><strong>Avoid Late-Injected Content:</strong> Do not insert dynamic banners or ads above existing content without allocating container space beforehand.</li>
+            <li><strong>Use CSS transform:</strong> Use CSS transforms for animations instead of altering top, left, or margin values, which trigger browser reflows.</li>
+          </ul>
+
+          <h2 style="font-size: 26px; color: var(--navy); font-weight: 800; margin-top: 20px; font-family: var(--font-heading);">3. Interaction to Next Paint (INP)</h2>
+          <p>
+            Replacing First Input Delay (FID), INP evaluates overall responsiveness. It measures the latency of all user interactions (clicks, taps, keyboard presses) throughout their visit. A good INP score is under 200 milliseconds.
+          </p>
+          <h3 style="font-size: 20px; color: var(--navy); font-weight: 700; margin-top: 10px; font-family: var(--font-heading);">How to Optimize INP:</h3>
+          <ul style="padding-left: 20px; display: flex; flex-direction: column; gap: 8px;">
+            <li><strong>Defer JavaScript Execution:</strong> Use `async` or `defer` attributes on script tags to keep script evaluation from blocking the main thread.</li>
+            <li><strong>Split Long Tasks:</strong> Break down intensive calculations into smaller chunks using requestAnimationFrame.</li>
+            <li><strong>Avoid DOM Bloat:</strong> Keep your total DOM tree node count below 1,000 to minimize browser recalculation times.</li>
+          </ul>
+        </div>
+
+        <!-- Article Footer CTA -->
+        <div style="background: var(--bg-secondary); border: 1px solid var(--border-color); padding: 40px; border-radius: 20px; margin-top: 60px; text-align: center;">
+          <h3 style="font-size: 22px; color: var(--navy); margin-bottom: 12px; font-family: var(--font-heading);">Struggling to Pass the Core Web Vitals Test?</h3>
+          <p style="color: #64748B; font-size: 15px; margin-bottom: 24px; max-width: 600px; margin-left: auto; margin-right: auto;">
+            Our development team specializes in code optimization and performance tune-ups. Contact us today for a free speed evaluation.
+          </p>
+          <a href="../contact.html" class="btn btn-primary magnetic ripple-btn" style="border: none;">
+            <span class="magnetic-inner">Get a Performance Evaluation</span>
+          </a>
+        </div>
+      </div>
+    </article>
+  </main>
+
+  <!-- ==========================================
+       FOOTER
+       ========================================== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <img src="/assets/logo-D-U1V_IV.png" alt="WebAura Logo" class="footer-brand-logo" width="160" height="38" loading="lazy">
+          <p class="footer-brand-desc">
+            WebAura builds state-of-the-art web products optimized for speed, aesthetics, and high-impact business
+            growth.
+          </p>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Navigation</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="../index.html">Home</a></li>
+            <li class="footer-link-item"><a href="../about.html">About</a></li>
+            <li class="footer-link-item"><a href="../services.html">Services</a></li>
+            <li class="footer-link-item"><a href="../projects.html">Projects</a></li>
+            <li class="footer-link-item"><a href="../process.html">Process</a></li>
+            <li class="footer-link-item"><a href="../faq.html">FAQ</a></li>
+            <li class="footer-link-item"><a href="../blog.html">Blog</a></li>
+            <li class="footer-link-item"><a href="../contact.html">Contact</a></li>
+          </ul>
+        </div>
+
+        <div>
+          <h4 class="footer-title">Contact</h4>
+          <ul class="footer-links">
+            <li class="footer-link-item"><a href="tel:+919916699894">+91 99166 99894</a></li>
+            <li class="footer-link-item"><a href="mailto:webaura321@gmail.com">webaura321@gmail.com</a></li>
+            <li class="footer-link-item"><span class="text-secondary-gray text-sm">Bengaluru,Karnataka,India</span></li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <span class="copyright">© 2026 WebAura. All rights reserved.</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Main JavaScript Modules -->
+</body>
+
+</html>
